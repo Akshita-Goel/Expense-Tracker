@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rosario&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Expenses Tracker</title>
+</head>
+<body>
+    
+    <header class="bg-dark">
+        <h2>Expenses Tracker</h2>
+    </header>
+    
+    <div>
+        <section class="s1 ">
+            <div> 
+                <div class="budget__title">
+                    Available Budget in <span id="month"></span>
+                </div>
+                <div class="budget__value" id="f_scr">-0.00 Rs.</div>
+                <hr>
+                <div class="budget__income ">
+                    <div >Total Budget</div>
+                    <div >
+                        <div  id="upd_inc">+ 0.00</div> 
+                    </div>
+                </div>
+                <div class="budget__expenses ">
+                    <div >Expenses</div>
+                    <div >
+                        <div  id="upd_exp">- 0.00</div>
+                        <div  id="exp_fperc">___</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="split">
+            <section class="s3 container">
+                <div ><canvas id="chart-area"></canvas></div>   
+            </section>
+            <section class="s2">
+                <form class="container split" onsubmit="run(event)">
+                    <select id="type">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                    </select>
+                    <input type="text" id="desc" placeholder="Description" required>
+                    <input type="number" id="val" placeholder="Price" required min="1">
+                    <button type="submit">Add</button>
+                </form>
+                <div class="container">
+                    <div class="list split">
+                        <div class="income container">
+                            <h2 class="icome__title">Total Budget</h2>
+                            <hr>
+                            <div class="income__list" id="ilist"></div>
+                        </div>
+                        <div class="expenses container">
+                            <h2 class="expenses__title">Expenses</h2>
+                            <hr>
+                            <div class="expenses__list" id="elist"></div>
+                        </div>
+                    </div> 
+                </div>     
+            </section>
+           
+        </section>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
